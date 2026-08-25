@@ -184,8 +184,15 @@ h3{font-size:clamp(1.26rem,2vw,1.58rem);line-height:1.15;letter-spacing:-.028em;
 .cta-hint strong{color:var(--charcoal);font-weight:650;white-space:nowrap}
 .cta-hint .ic{color:var(--red);display:inline-block;vertical-align:-3px;margin-right:7px}
 .cta-hint.center{text-align:center;margin-top:10px}
+.cta-hint .tg-link{color:var(--ink);font-weight:640;text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;text-decoration-color:var(--line-2);transition:color .2s,text-decoration-color .2s}
+.cta-hint .tg-link:hover{color:var(--red);text-decoration-color:var(--red)}
 .foot-tg{display:inline-flex;align-items:center;gap:7px;font-weight:600}
 .foot-tg .ic{color:var(--red)}
+.nav-contact{color:var(--ink) !important;font-weight:620}
+.btn-contact .ic{color:var(--red);transition:transform .25s var(--ease)}
+.btn-contact:hover .ic{transform:translateX(2px)}
+.f-card .btn-contact{margin-top:10px}
+.final-btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;align-items:center}
 /* ============================================================
    hero visual — ticket alert monitor
    ============================================================ */
@@ -866,6 +873,7 @@ h3{font-size:clamp(1.26rem,2vw,1.58rem);line-height:1.15;letter-spacing:-.028em;
       <a href="#alert-demo">Alert Demo</a>
       <a href="#founder">Founder Access</a>
       <a href="#faq">FAQ</a>
+      <a class="nav-contact" href="https://t.me/Vishal_suthar_28" data-contact target="_blank" rel="noopener noreferrer">Contact</a>
     </nav>
     <div class="header-cta">
       <button class="btn btn-primary btn-sm" data-checkout type="button">Reserve Access &mdash; &pound;5</button>
@@ -879,8 +887,9 @@ h3{font-size:clamp(1.26rem,2vw,1.58rem);line-height:1.15;letter-spacing:-.028em;
     <a class="mlink" href="#alert-demo">Alert Demo <svg class="ic ic-16" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
     <a class="mlink" href="#founder">Founder Access <svg class="ic ic-16" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
     <a class="mlink" href="#faq">FAQ <svg class="ic ic-16" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+    <a class="mlink" href="https://t.me/Vishal_suthar_28" data-contact target="_blank" rel="noopener noreferrer">Contact on Telegram <svg class="ic ic-16" aria-hidden="true"><use href="#i-send"></use></svg></a>
     <button class="btn btn-primary btn-block" data-checkout type="button">Reserve Founder Access &mdash; &pound;5 <svg class="ic ic-18 arrow" aria-hidden="true"><use href="#i-arrow"></use></svg></button>
-    <p class="mnote">Opens Telegram &middot; &#64;Vishal_suthar_28 &middot; refundable deposit</p>
+    <p class="mnote">Secure &pound;5 payment via PayPal &middot; refundable deposit</p>
   </div>
 </header>
 
@@ -922,7 +931,7 @@ h3{font-size:clamp(1.26rem,2vw,1.58rem);line-height:1.15;letter-spacing:-.028em;
         <button class="btn btn-primary" data-checkout type="button">Reserve Founder Access &mdash; &pound;5 <svg class="ic ic-18 arrow" aria-hidden="true"><use href="#i-arrow"></use></svg></button>
         <a class="btn btn-ghost" href="#how">See How It Works <svg class="ic ic-18 down" aria-hidden="true"><use href="#i-arrow-down"></use></svg></a>
       </div>
-      <p class="cta-hint" data-reveal style="--d:260ms"><svg class="ic ic-14" aria-hidden="true"><use href="#i-send"></use></svg>Opens Telegram &mdash; message <strong>@Vishal_suthar_28</strong> to claim a founding spot.</p>
+      <p class="cta-hint" data-reveal style="--d:260ms"><svg class="ic ic-14" aria-hidden="true"><use href="#i-shield"></use></svg>Secure &pound;5 payment via PayPal. Questions first? <a class="tg-link" href="https://t.me/Vishal_suthar_28" data-contact target="_blank" rel="noopener noreferrer">Contact us on Telegram</a>.</p>
       <ul class="trust-row" data-reveal style="--d:290ms">
         <li><svg class="ic" aria-hidden="true"><use href="#i-check"></use></svg>Independent alert service</li>
         <li><svg class="ic" aria-hidden="true"><use href="#i-check"></use></svg>Buy only through official channels</li>
@@ -1411,8 +1420,8 @@ h3{font-size:clamp(1.26rem,2vw,1.58rem);line-height:1.15;letter-spacing:-.028em;
           <li><svg class="ic" aria-hidden="true"><use href="#i-check"></use></svg>Deposit refunded if the service does not launch</li>
         </ul>
         <button class="btn btn-primary btn-lg btn-block" data-checkout type="button">Join the Founding Beta &mdash; &pound;5 <svg class="ic ic-18 arrow" aria-hidden="true"><use href="#i-arrow"></use></svg></button>
-        <p class="f-refund"><svg class="ic" aria-hidden="true"><use href="#i-shield"></use></svg>Refundable if the service does not launch.</p>
-        <p class="cta-hint center"><svg class="ic ic-14" aria-hidden="true"><use href="#i-send"></use></svg>Opens Telegram &mdash; message <strong>@Vishal_suthar_28</strong> and I&rsquo;ll set up your founding spot.</p>
+        <a class="btn btn-ghost btn-block btn-contact" href="https://t.me/Vishal_suthar_28" data-contact target="_blank" rel="noopener noreferrer"><svg class="ic ic-18" aria-hidden="true"><use href="#i-send"></use></svg>Contact us on Telegram</a>
+        <p class="f-refund"><svg class="ic" aria-hidden="true"><use href="#i-shield"></use></svg>Secure PayPal payment &middot; refundable if the service does not launch.</p>
       </div>
 
       <div class="deposit-viz" data-reveal="strong" style="--d:110ms">
@@ -1665,9 +1674,12 @@ h3{font-size:clamp(1.26rem,2vw,1.58rem);line-height:1.15;letter-spacing:-.028em;
     <p class="lede" data-reveal style="--d:70ms">Join the founding beta and help us build a better way to keep track of Arsenal ticket opportunities.</p>
     <p class="final-price" data-reveal style="--d:120ms"><svg class="ic ic-16" aria-hidden="true"><use href="#i-ticket"></use></svg>&pound;5 refundable founding deposit</p>
     <div data-reveal style="--d:170ms">
-      <button class="btn btn-primary btn-lg" data-checkout type="button">Reserve My Founder Spot <svg class="ic ic-18 arrow" aria-hidden="true"><use href="#i-arrow"></use></svg></button>
+      <div class="final-btns">
+        <button class="btn btn-primary btn-lg" data-checkout type="button">Reserve My Founder Spot <svg class="ic ic-18 arrow" aria-hidden="true"><use href="#i-arrow"></use></svg></button>
+        <a class="btn btn-ghost btn-lg btn-contact" href="https://t.me/Vishal_suthar_28" data-contact target="_blank" rel="noopener noreferrer"><svg class="ic ic-18" aria-hidden="true"><use href="#i-send"></use></svg>Contact Us</a>
+      </div>
     </div>
-    <p class="final-foot" data-reveal style="--d:220ms">Independent alert service <i aria-hidden="true"></i> Official purchase process <i aria-hidden="true"></i> Refundable founding deposit <i aria-hidden="true"></i> Reserve via Telegram &#64;Vishal_suthar_28</p>
+    <p class="final-foot" data-reveal style="--d:220ms">Independent alert service <i aria-hidden="true"></i> Official purchase process <i aria-hidden="true"></i> Refundable founding deposit <i aria-hidden="true"></i> Secure PayPal payment</p>
   </div>
 </section>
 </main>
@@ -1688,8 +1700,8 @@ h3{font-size:clamp(1.26rem,2vw,1.58rem);line-height:1.15;letter-spacing:-.028em;
         <a href="#alert-demo">Alert Demo</a>
         <a href="#founder">Founder Access</a>
         <a href="#faq">FAQ</a>
-        <a class="foot-tg" href="https://t.me/Vishal_suthar_28" target="_blank" rel="noopener noreferrer">
-          <svg class="ic ic-14" aria-hidden="true"><use href="#i-send"></use></svg>Telegram &#64;Vishal_suthar_28
+        <a class="foot-tg" href="https://t.me/Vishal_suthar_28" data-contact target="_blank" rel="noopener noreferrer">
+          <svg class="ic ic-14" aria-hidden="true"><use href="#i-send"></use></svg>Contact &#64;Vishal_suthar_28
         </a>
       </nav>
     </div>
@@ -1733,12 +1745,13 @@ h3{font-size:clamp(1.26rem,2vw,1.58rem);line-height:1.15;letter-spacing:-.028em;
 /* =========================================================
    Arsenal Ticket Alert — front-end behaviour
 
-   Where every founder CTA sends people. Currently a direct
-   Telegram message, so interested supporters reach you first.
-   Swap in a payment link later and nothing else has to change.
+   Two destinations, each editable in one place:
+   CHECKOUT_URL — every "Reserve / Join" founder CTA (payment)
+   CONTACT_URL  — every "Contact" link (direct message)
    ========================================================= */
-var CHECKOUT_URL = "https://t.me/Vishal_suthar_28";
-var CHECKOUT_LABEL = "opens Telegram in a new tab";
+var CHECKOUT_URL = "https://www.paypal.com/ncp/payment/BY5YGS5WPJKAW";
+var CONTACT_URL = "https://t.me/Vishal_suthar_28";
+var CHECKOUT_LABEL = "opens PayPal in a new tab";
 
 (function () {
   "use strict";
@@ -1961,6 +1974,11 @@ var CHECKOUT_LABEL = "opens Telegram in a new tab";
       var w = window.open(CHECKOUT_URL, "_blank", "noopener,noreferrer");
       if (!w) window.location.href = CHECKOUT_URL;
     });
+  });
+
+  /* ---------- contact links all resolve to one address ---------- */
+  qa("[data-contact]").forEach(function (link) {
+    if (CONTACT_URL) link.setAttribute("href", CONTACT_URL);
   });
 
   /* ---------- mobile sticky CTA ---------- */

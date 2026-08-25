@@ -180,6 +180,12 @@ h3{font-size:clamp(1.26rem,2vw,1.58rem);line-height:1.15;letter-spacing:-.028em;
 .trust-row{margin-top:26px;display:flex;flex-wrap:wrap;gap:10px 22px}
 .trust-row li{display:flex;align-items:center;gap:8px;font-size:13.6px;color:var(--grey-2);font-weight:520}
 .trust-row .ic{color:var(--signal);width:16px;height:16px;stroke-width:2.3}
+.cta-hint{margin-top:16px;font-size:12.6px;color:var(--grey);line-height:1.5}
+.cta-hint strong{color:var(--charcoal);font-weight:650;white-space:nowrap}
+.cta-hint .ic{color:var(--red);display:inline-block;vertical-align:-3px;margin-right:7px}
+.cta-hint.center{text-align:center;margin-top:10px}
+.foot-tg{display:inline-flex;align-items:center;gap:7px;font-weight:600}
+.foot-tg .ic{color:var(--red)}
 /* ============================================================
    hero visual — ticket alert monitor
    ============================================================ */
@@ -874,7 +880,7 @@ h3{font-size:clamp(1.26rem,2vw,1.58rem);line-height:1.15;letter-spacing:-.028em;
     <a class="mlink" href="#founder">Founder Access <svg class="ic ic-16" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
     <a class="mlink" href="#faq">FAQ <svg class="ic ic-16" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
     <button class="btn btn-primary btn-block" data-checkout type="button">Reserve Founder Access &mdash; &pound;5 <svg class="ic ic-18 arrow" aria-hidden="true"><use href="#i-arrow"></use></svg></button>
-    <p class="mnote">Refundable if the service does not launch.</p>
+    <p class="mnote">Opens Telegram &middot; &#64;Vishal_suthar_28 &middot; refundable deposit</p>
   </div>
 </header>
 
@@ -916,6 +922,7 @@ h3{font-size:clamp(1.26rem,2vw,1.58rem);line-height:1.15;letter-spacing:-.028em;
         <button class="btn btn-primary" data-checkout type="button">Reserve Founder Access &mdash; &pound;5 <svg class="ic ic-18 arrow" aria-hidden="true"><use href="#i-arrow"></use></svg></button>
         <a class="btn btn-ghost" href="#how">See How It Works <svg class="ic ic-18 down" aria-hidden="true"><use href="#i-arrow-down"></use></svg></a>
       </div>
+      <p class="cta-hint" data-reveal style="--d:260ms"><svg class="ic ic-14" aria-hidden="true"><use href="#i-send"></use></svg>Opens Telegram &mdash; message <strong>@Vishal_suthar_28</strong> to claim a founding spot.</p>
       <ul class="trust-row" data-reveal style="--d:290ms">
         <li><svg class="ic" aria-hidden="true"><use href="#i-check"></use></svg>Independent alert service</li>
         <li><svg class="ic" aria-hidden="true"><use href="#i-check"></use></svg>Buy only through official channels</li>
@@ -1405,6 +1412,7 @@ h3{font-size:clamp(1.26rem,2vw,1.58rem);line-height:1.15;letter-spacing:-.028em;
         </ul>
         <button class="btn btn-primary btn-lg btn-block" data-checkout type="button">Join the Founding Beta &mdash; &pound;5 <svg class="ic ic-18 arrow" aria-hidden="true"><use href="#i-arrow"></use></svg></button>
         <p class="f-refund"><svg class="ic" aria-hidden="true"><use href="#i-shield"></use></svg>Refundable if the service does not launch.</p>
+        <p class="cta-hint center"><svg class="ic ic-14" aria-hidden="true"><use href="#i-send"></use></svg>Opens Telegram &mdash; message <strong>@Vishal_suthar_28</strong> and I&rsquo;ll set up your founding spot.</p>
       </div>
 
       <div class="deposit-viz" data-reveal="strong" style="--d:110ms">
@@ -1659,7 +1667,7 @@ h3{font-size:clamp(1.26rem,2vw,1.58rem);line-height:1.15;letter-spacing:-.028em;
     <div data-reveal style="--d:170ms">
       <button class="btn btn-primary btn-lg" data-checkout type="button">Reserve My Founder Spot <svg class="ic ic-18 arrow" aria-hidden="true"><use href="#i-arrow"></use></svg></button>
     </div>
-    <p class="final-foot" data-reveal style="--d:220ms">Independent alert service <i aria-hidden="true"></i> Official purchase process <i aria-hidden="true"></i> Refundable founding deposit</p>
+    <p class="final-foot" data-reveal style="--d:220ms">Independent alert service <i aria-hidden="true"></i> Official purchase process <i aria-hidden="true"></i> Refundable founding deposit <i aria-hidden="true"></i> Reserve via Telegram &#64;Vishal_suthar_28</p>
   </div>
 </section>
 </main>
@@ -1680,6 +1688,9 @@ h3{font-size:clamp(1.26rem,2vw,1.58rem);line-height:1.15;letter-spacing:-.028em;
         <a href="#alert-demo">Alert Demo</a>
         <a href="#founder">Founder Access</a>
         <a href="#faq">FAQ</a>
+        <a class="foot-tg" href="https://t.me/Vishal_suthar_28" target="_blank" rel="noopener noreferrer">
+          <svg class="ic ic-14" aria-hidden="true"><use href="#i-send"></use></svg>Telegram &#64;Vishal_suthar_28
+        </a>
       </nav>
     </div>
     <div class="foot-legal">
@@ -1721,9 +1732,13 @@ h3{font-size:clamp(1.26rem,2vw,1.58rem);line-height:1.15;letter-spacing:-.028em;
 <script>
 /* =========================================================
    Arsenal Ticket Alert — front-end behaviour
-   Connect your payment link here:
+
+   Where every founder CTA sends people. Currently a direct
+   Telegram message, so interested supporters reach you first.
+   Swap in a payment link later and nothing else has to change.
    ========================================================= */
-var CHECKOUT_URL = "YOUR_CHECKOUT_URL_HERE";
+var CHECKOUT_URL = "https://t.me/Vishal_suthar_28";
+var CHECKOUT_LABEL = "opens Telegram in a new tab";
 
 (function () {
   "use strict";
@@ -1935,14 +1950,16 @@ var CHECKOUT_URL = "YOUR_CHECKOUT_URL_HERE";
   });
 
   /* ---------- every CTA points at one checkout action ---------- */
+  var checkoutReady = CHECKOUT_URL && CHECKOUT_URL !== "YOUR_CHECKOUT_URL_HERE";
   qa("[data-checkout]").forEach(function (btn) {
+    if (checkoutReady && CHECKOUT_LABEL) {
+      btn.setAttribute("aria-label", btn.textContent.replace(/\s+/g, " ").trim() + " — " + CHECKOUT_LABEL);
+    }
     btn.addEventListener("click", function (e) {
       e.preventDefault();
-      if (CHECKOUT_URL && CHECKOUT_URL !== "YOUR_CHECKOUT_URL_HERE") {
-        window.location.href = CHECKOUT_URL;
-      } else {
-        openModal();
-      }
+      if (!checkoutReady) { openModal(); return; }
+      var w = window.open(CHECKOUT_URL, "_blank", "noopener,noreferrer");
+      if (!w) window.location.href = CHECKOUT_URL;
     });
   });
 
